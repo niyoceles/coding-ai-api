@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"npm run migrate && npm run seed\" \"babel-node app.js \"",
+    "start": "concurrently \"npm run migrate && npm run seed\" \"babel-node app.js\"",
     "dev": "NODE_ENV=development nodemon ./app.js --exec babel-node",
     "setup:dev": "NODE_ENV=development npm run migrate:undo && NODE_ENV=development npm run migrate && NODE_ENV=development npm run seed",
     "migrate": "node_modules/.bin/sequelize db:migrate",
@@ -23,15 +23,16 @@
   },
   "homepage": "https://github.com/niyoceles/coding-ai-api#readme",
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/register": "^7.6.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "nodemon": "^1.19.4"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
+    "@babel/core": "^7.6.4",
+    "@babel/cli": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.7.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.0",
